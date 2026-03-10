@@ -39,7 +39,7 @@ public class DuvidaController
     @PutMapping("/{id}")
     public Duvida alterar(@RequestBody Duvida duvida, @PathVariable Integer id)
     {
-        if(id == duvida.getId() && buscarPorId(id).isPresent())
+        if(id == duvida.getIdDuvida() && buscarPorId(id).isPresent())
         {
             return repository.save(duvida);
         }

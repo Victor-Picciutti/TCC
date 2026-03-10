@@ -17,7 +17,7 @@ public class Atividade
     @Id
     @Column(name = "idAtividade")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idAtividade;
+    private Integer IdAtividade;
 
     @Column(name = "Titulo")
     private String titulo;
@@ -27,4 +27,8 @@ public class Atividade
 
     @Column(name = "PontuacaoMaxima")
     private Integer pontuacaoMaxima;
+
+    @ManyToOne
+    @JoinColumn(name = "idNivelDificuldade")
+    private NivelDificuldade nivelDificuldade;
 }

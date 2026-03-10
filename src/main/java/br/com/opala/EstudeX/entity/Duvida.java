@@ -17,7 +17,7 @@ public class Duvida
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDuvida")
-    private Integer id;
+    private Integer idDuvida;
     @Column(name = "Titulo")
     private String titulo;
     @Column(name = "Descricao")

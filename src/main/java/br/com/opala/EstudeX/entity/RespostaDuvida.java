@@ -16,7 +16,7 @@ public class RespostaDuvida
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDuvida")
-    private Integer id;
+    private Integer idDuvida;
     @Column(name = "Momento")
     private LocalDateTime momento;
     @Column(name = "ConteudoResposta")
