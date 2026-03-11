@@ -36,10 +36,10 @@ public class AlunoController
     public Aluno cadastrar(@RequestBody Aluno aluno)
     {
         return repository.save(aluno);
-    }
+    }//falar com o ronqui
 
     @PutMapping("/{id}")
-    public Aluno alterar(@RequestBody Aluno aluno, @PathVariable Integer id)
+    public Aluno alterar(@RequestBody Aluno aluno, @PathVariable Integer id)//alterar status
     {
         if(id == aluno.getId() && buscarPorId(id).isPresent())
         {
@@ -48,13 +48,5 @@ public class AlunoController
         return null;
     }
 
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Integer id)
-    {
-        var aluno = buscarPorId(id);
-        if(aluno.isPresent())
-        {
-            repository.deleteById(id);
-        }
-    }
+
 }

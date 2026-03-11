@@ -19,9 +19,9 @@ public class DuvidaController
     public List<Duvida> listar()
     {
         return repository.findAll();
-    }
+    }//criar um get para busca de conteudo filtrado
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}")//melhor por outra coisa ao inves do id
     public Optional<Duvida> buscarPorId(@PathVariable("id") Integer id)
     {
         var duvida = repository.findById(id);
@@ -36,23 +36,4 @@ public class DuvidaController
         return repository.save(duvida);
     }
 
-    @PutMapping("/{id}")
-    public Duvida alterar(@RequestBody Duvida duvida, @PathVariable Integer id)
-    {
-        if(id == duvida.getIdDuvida() && buscarPorId(id).isPresent())
-        {
-            return repository.save(duvida);
-        }
-        return null;
-    }
-
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Integer id)
-    {
-        var duvida = buscarPorId(id);
-        if(duvida.isPresent())
-        {
-            repository.deleteById(id);
-        }
-    }
 }

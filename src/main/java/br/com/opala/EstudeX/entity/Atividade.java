@@ -28,7 +28,8 @@ public class Atividade
     @Column(name = "PontuacaoMaxima")
     private Integer pontuacaoMaxima;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "idNivelDificuldade")
     private NivelDificuldade nivelDificuldade;
+     */
 }

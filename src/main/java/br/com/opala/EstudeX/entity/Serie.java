@@ -23,6 +23,8 @@ public class Serie
     private Integer id;
     @Column(name = "Inicio")
     private LocalDate inicio;
+    @Column(name = "Ano")
+    private String ano;
 
     @OneToMany(mappedBy = "serie")
     @JsonIgnore private List<Aluno> alunos;

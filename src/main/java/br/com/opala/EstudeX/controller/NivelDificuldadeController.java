@@ -18,7 +18,7 @@ public class NivelDificuldadeController
     public List<NivelDificuldade> listar() {return repository.findAll();}
 
     @PostMapping
-    public NivelDificuldade cadastrar(@RequestBody NivelDificuldade nivelDificuldade)
+    public NivelDificuldade cadastrar(@RequestBody NivelDificuldade nivelDificuldade)//colocar dentro de atividade
     {
         return repository.save(nivelDificuldade);
     }

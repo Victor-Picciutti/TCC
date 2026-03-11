@@ -23,38 +23,13 @@ public class RespostaDuvidaController
         return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<RespostaDuvida> buscarPorId(@PathVariable("id") Integer id)
-    {
-        var Respostaduvida = repository.findById(id);
-        if(Respostaduvida.isPresent())
-            return Respostaduvida;
-        return null;
-    }
+
     @PostMapping
     public RespostaDuvida cadastrar(@RequestBody RespostaDuvida respostaDuvida)
     {
         return repository.save(respostaDuvida);
     }
 
-    @PutMapping("/{id}")
-    public RespostaDuvida alterar(@RequestBody RespostaDuvida respostaDuvida, @PathVariable Integer id)
-    {
-        if(id == respostaDuvida.getIdDuvida() && buscarPorId(id).isPresent())
-        {
-            return repository.save(respostaDuvida);
-        }
-        return null;
-    }
 
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Integer id)
-    {
-        var Respostaduvida = buscarPorId(id);
-        if(Respostaduvida.isPresent())
-        {
-            repository.deleteById(id);
-        }
-    }
 }
 
