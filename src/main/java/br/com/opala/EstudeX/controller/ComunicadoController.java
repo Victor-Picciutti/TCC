@@ -1,0 +1,25 @@
+package br.com.opala.EstudeX.controller;
+
+import br.com.opala.EstudeX.entity.Comunicado;
+import br.com.opala.EstudeX.repository.ComunicadoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/comunicados")
+public class ComunicadoController
+{
+    @Autowired
+    private ComunicadoRepository repository;
+
+    @GetMapping
+    public List<Comunicado> listar() {return repository.findAll();}
+
+    @PostMapping
+    public Comunicado cadastrar(@RequestBody Comunicado comunicado)
+    {
+        return repository.save(comunicado);
+    }
+}

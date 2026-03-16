@@ -25,7 +25,7 @@ public class Utilizador
     private String cidade;
     @Column(name = "Foto")
     private Boolean foto;
-    @Column(name = "Senha", length = 25)
+    @Column(name = "SenhaHash", length = 25)
     private String senha;
 
 

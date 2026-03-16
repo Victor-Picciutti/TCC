@@ -15,6 +15,9 @@ public class Aluno extends Utilizador
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "xp")
+    private Integer xp;
+
     @ManyToOne
     @JoinColumn(name = "idSerie")
     private Serie serie;
