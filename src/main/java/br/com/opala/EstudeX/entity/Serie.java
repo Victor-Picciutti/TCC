@@ -1,6 +1,7 @@
 package br.com.opala.EstudeX.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,14 +22,19 @@ public class Serie
     @Column(name = "idSerie")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "NomeSerie")
+    private String nomeSerie;
+
     @Column(name = "Inicio")
     private LocalDate inicio;
 
+    @OneToMany(mappedBy = "serie")
+    @JsonIgnore
+    private List<Aluno> alunos;
 
     @OneToMany(mappedBy = "serie")
-    @JsonIgnore private List<Aluno> alunos;
-
-    @OneToMany(mappedBy = "serie")
+    @JsonIgnore
     private List<Comunicado> comunicados;
 
 

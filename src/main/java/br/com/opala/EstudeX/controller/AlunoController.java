@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/alunos")
 public class AlunoController
 {
@@ -30,6 +31,12 @@ public class AlunoController
         if(aluno.isPresent())
             return aluno;
         return null;
+    }
+
+    @GetMapping("/serie/{idSerie}")
+    public List<Aluno> listarPorSerie(@PathVariable Integer idSerie)
+    {
+        return repository.buscarPorSerie(idSerie);
     }
 
     @PostMapping

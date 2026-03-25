@@ -1,5 +1,6 @@
 package br.com.opala.EstudeX.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "TBL_ALUNO")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno extends Utilizador
 {
     @Id
@@ -20,6 +22,7 @@ public class Aluno extends Utilizador
 
     @ManyToOne
     @JoinColumn(name = "idSerie")
+    @JsonIgnoreProperties({"alunos", "comunicados"})
     private Serie serie;
 
 }
