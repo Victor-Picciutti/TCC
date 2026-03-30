@@ -20,9 +20,9 @@ public class AtividadePergunta
 
     @ManyToOne
     @JoinColumn(name = "idAtividade")
-    private Atividade Atividade;
+    private Atividade atividade;
 
-    @OneToOne
-    @JoinColumn(name = "idNivelDificuldade")
-    private NivelDificuldade nivelDificuldade;
+    //@OneToOne
+    //@JoinColumn(name = "idNivelDificuldade")
+    //private NivelDificuldade nivelDificuldade;
 }

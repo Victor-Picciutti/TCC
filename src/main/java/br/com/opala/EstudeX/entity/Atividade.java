@@ -17,7 +17,7 @@ public class Atividade
     @Id
     @Column(name = "idAtividade")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdAtividade;
+    private Integer idAtividade;
 
     @Column(name = "Titulo")
     private String titulo;
@@ -27,6 +27,9 @@ public class Atividade
 
     @Column(name = "PontuacaoMaxima")
     private Integer pontuacaoMaxima;
+
+    @Column(name = "idOrientador") // liga com a coluna do banco
+    private Integer idOrientador; // guarda o ID do professor
 
     /*@ManyToOne
     @JoinColumn(name = "idNivelDificuldade")
