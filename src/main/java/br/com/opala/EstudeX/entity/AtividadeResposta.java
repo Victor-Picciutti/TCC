@@ -1,4 +1,4 @@
-/*package br.com.opala.EstudeX.entity;
+package br.com.opala.EstudeX.entity;
 
 
 import jakarta.persistence.*;
@@ -14,11 +14,8 @@ import java.sql.Timestamp;
 public class AtividadeResposta
 {
     @Id
-    @Column(name = "idAtividade")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idAtividade;
-
     @Column(name = "idAtividadeAluno")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAtividadeAluno;
 
     @Column(name = "momentoInicio")
@@ -33,5 +30,8 @@ public class AtividadeResposta
     @ManyToOne
     @JoinColumn(name = "idAtividade")
     private Atividade atividade;
+
+    @OneToOne
+    @JoinColumn(name = "idAluno")
+    private Utilizador utilizador;
 }
-*/

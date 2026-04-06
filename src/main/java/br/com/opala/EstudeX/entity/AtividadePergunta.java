@@ -22,7 +22,4 @@ public class AtividadePergunta
     @JoinColumn(name = "idAtividade")
     private Atividade atividade;
 
-    //@OneToOne
-    //@JoinColumn(name = "idNivelDificuldade")
-    //private NivelDificuldade nivelDificuldade;
 }

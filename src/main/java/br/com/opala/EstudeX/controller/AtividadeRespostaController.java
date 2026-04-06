@@ -1,7 +1,6 @@
-/*package br.com.opala.EstudeX.controller;
+package br.com.opala.EstudeX.controller;
 
 import br.com.opala.EstudeX.entity.AtividadeResposta;
-import br.com.opala.EstudeX.repository.AtividadeRepository;
 import br.com.opala.EstudeX.repository.AtividadeRespostaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,4 +23,3 @@ public class AtividadeRespostaController
         return repository.save(atividadeResposta);
     }
 }
-*/

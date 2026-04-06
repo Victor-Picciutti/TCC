@@ -18,12 +18,16 @@ public class Duvida
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDuvida")
     private Integer idDuvida;
+
     @Column(name = "Titulo")
     private String titulo;
+
     @Column(name = "Descricao")
     private String descricao;
+
     @Column(name = "Momento")
     private LocalDateTime momento;
+
     @Column(name = "StatusDuvida")
     private String statusDuvida;
 
@@ -31,7 +35,7 @@ public class Duvida
     @JoinColumn(name = "idUtilizador")
     private Utilizador utilizador;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "idConteudo")
     private Conteudo conteudo;
 

@@ -28,11 +28,12 @@ public class Atividade
     @Column(name = "PontuacaoMaxima")
     private Integer pontuacaoMaxima;
 
-    @Column(name = "idOrientador") // liga com a coluna do banco
-    private Integer idOrientador; // guarda o ID do professor
+    @ManyToOne
+    @JoinColumn(name = "idOrientador")
+    private Utilizador utilizador;
 
-    /*@ManyToOne
+    @OneToOne
     @JoinColumn(name = "idNivelDificuldade")
     private NivelDificuldade nivelDificuldade;
-     */
+
 }
