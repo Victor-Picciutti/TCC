@@ -19,14 +19,14 @@ public class RespostaDuvidaController
     private RespostaDuvidaRepository repository;
 
     @GetMapping
-    public List<RespostaDuvida> listar()
+    public List<RespostaDuvida> listarRespostaDaDuvida()
     {
         return repository.findAll();
     }
 
 
     @PostMapping
-    public RespostaDuvida cadastrar(@RequestBody RespostaDuvida respostaDuvida)
+    public RespostaDuvida responderDuvida(@RequestBody RespostaDuvida respostaDuvida)
     {
         return repository.save(respostaDuvida);
     }

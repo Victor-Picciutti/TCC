@@ -16,10 +16,10 @@ public class ComunicadoController
     private ComunicadoRepository repository;
 
     @GetMapping
-    public List<Comunicado> listar() {return repository.findAll();}
+    public List<Comunicado> listarComunicados() {return repository.findAll();}
 
     @PostMapping
-    public Comunicado cadastrar(@RequestBody Comunicado comunicado)
+    public Comunicado criarComunicado(@RequestBody Comunicado comunicado)
     {
         return repository.save(comunicado);
     }

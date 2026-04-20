@@ -18,10 +18,10 @@ public class ContratoController
     private ContratoRepository repository;
 
     @GetMapping
-    public List<Contrato> listar() {return repository.findAll();}
+    public List<Contrato> listarContrato() {return repository.findAll();}
 
     @PostMapping
-    public Contrato cadastrar(@RequestBody Contrato contrato)
+    public Contrato criarContrato(@RequestBody Contrato contrato)
     {
                 return repository.save(contrato);
     }

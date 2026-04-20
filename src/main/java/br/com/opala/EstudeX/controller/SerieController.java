@@ -18,10 +18,10 @@ public class SerieController
     private SerieRepository repository;
 
     @GetMapping
-    public List<Serie> listar() {return repository.findAll();}
+    public List<Serie> listarSeries() {return repository.findAll();}
 
     @PostMapping
-    public Serie cadastrar(@RequestBody Serie serie)
+    public Serie cadastrarSerie(@RequestBody Serie serie)
     {
         return repository.save(serie);
     }

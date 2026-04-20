@@ -17,11 +17,13 @@ public class AtividadePerguntaController
     private AtividadePerguntaRepository repository;
 
     @GetMapping
-    public List<AtividadePergunta> listar() {return repository.findAll();}
+    public List<AtividadePergunta> listarPerguntas() {return repository.findAll();}
 
     @PostMapping
-    public AtividadePergunta cadastrar(@RequestBody AtividadePergunta atividadePergunta)
+    public AtividadePergunta CriarPergunta(@RequestBody AtividadePergunta atividadePergunta)
     {
         return repository.save(atividadePergunta);
     }
+
+
 }

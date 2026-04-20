@@ -16,10 +16,10 @@ public class AtividadeRespostaController
     private AtividadeRespostaRepository repository;
 
     @GetMapping
-    public List<AtividadeResposta> listar() {return repository.findAll();}
+    public List<AtividadeResposta> listarRespostas() {return repository.findAll();}
 
     @PostMapping
-    public AtividadeResposta cadastrar(@RequestBody AtividadeResposta atividadeResposta)
+    public AtividadeResposta criarRespostas(@RequestBody AtividadeResposta atividadeResposta)
     {
         return repository.save(atividadeResposta);
     }

@@ -17,13 +17,13 @@ public class DuvidaController
     private DuvidaRepository repository;
 
     @GetMapping
-    public List<Duvida> listar()
+    public List<Duvida> listarDuvidas()
     {
         return repository.findAll();
     }//criar um get para busca de conteudo filtrado
 
     @GetMapping("/{id}")//melhor por outra coisa ao inves do id
-    public Optional<Duvida> buscarPorId(@PathVariable("id") Integer id)
+    public Optional<Duvida> buscarDuvidaPorId(@PathVariable("id") Integer id)
     {
         var duvida = repository.findById(id);
         if(duvida.isPresent())
@@ -31,8 +31,9 @@ public class DuvidaController
         return null;
     }
 
+
     @PostMapping
-    public Duvida cadastrar(@RequestBody Duvida duvida)
+    public Duvida criarDuvida(@RequestBody Duvida duvida)
     {
         return repository.save(duvida);
     }

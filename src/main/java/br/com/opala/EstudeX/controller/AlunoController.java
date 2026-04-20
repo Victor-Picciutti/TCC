@@ -18,14 +18,14 @@ public class AlunoController
     private AlunoRepository repository;
 
     @GetMapping
-    public List<Aluno> listar()
+    public List<Aluno> listarAlunos()
     {
         return repository.findAll();
     }
 
 
     @GetMapping("/{id}")
-    public Optional<Aluno> buscarPorId(@PathVariable("id") Integer id)
+    public Optional<Aluno> buscarAlunoPorId(@PathVariable("id") Integer id)
     {
         var aluno = repository.findById(id);
         if(aluno.isPresent())
@@ -39,21 +39,14 @@ public class AlunoController
         return repository.buscarPorSerie(idSerie);
     }
 
-    @PostMapping
+    /*@PostMapping
     public Aluno cadastrar(@RequestBody Aluno aluno)
     {
         return repository.save(aluno);
-    }//falar com o ronqui
-
-    @PutMapping("/{id}")
-    public Aluno alterar(@RequestBody Aluno aluno, @PathVariable Integer id)//alterar status
-    {
-        if(id == aluno.getId() && buscarPorId(id).isPresent())
-        {
-            return repository.save(aluno);
-        }
-        return null;
     }
+    */
+
+
 
 
 }

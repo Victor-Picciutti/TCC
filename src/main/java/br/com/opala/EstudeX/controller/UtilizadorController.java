@@ -17,13 +17,13 @@ public class UtilizadorController
     private UtilizadorRepository repository;
 
     @GetMapping
-    public List<Utilizador> listar()
+    public List<Utilizador> listarUtilizadores()
     {
         return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Utilizador> buscarPorId(@PathVariable("id") Integer id)
+    public Optional<Utilizador> buscarUtilizadorPorId(@PathVariable("id") Integer id)
     {
         var utilizador = repository.findById(id);
         if(utilizador.isPresent())
@@ -32,28 +32,10 @@ public class UtilizadorController
     }
 
     @PostMapping
-    public Utilizador cadastrar(@RequestBody Utilizador utilizador)
+    public Utilizador cadastrarUtilizador(@RequestBody Utilizador utilizador)
     {
         return repository.save(utilizador);
     }
 
-    @PutMapping("/{id}")
-    public Utilizador alterar(@RequestBody Utilizador utilizador, @PathVariable Integer id)
-    {
-        if(id == utilizador.getId() && buscarPorId(id).isPresent())
-        {
-            return repository.save(utilizador);
-        }
-        return null;
-    }
 
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Integer id)
-    {
-        var utilizador = buscarPorId(id);
-        if(utilizador.isPresent())
-        {
-            repository.deleteById(id);
-        }
-    }
 }
